@@ -1,10 +1,10 @@
 <script>
 	import Invoice from '../components/Invoice.svelte';
 	import Data from '../components/Data.svelte';
-
+	import { writable } from 'svelte/store';
 	import { setContext } from 'svelte';
 
-	let data = {
+	let data = writable({
 		invoiceNumber: '001',
 		logo_url: 'https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_1280.jpg',
 		invoiceType: 'Invoice',
@@ -38,8 +38,7 @@
 		],
 		total: 568.99,
 		notes: ''
-	};
-
+	});
 	setContext('data', data);
 </script>
 
